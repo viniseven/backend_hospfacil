@@ -1,0 +1,22 @@
+
+//POST http://localhost:3333/accommodations
+//Content-Type: application/json
+//
+//{
+//  "name": "Copacabana Palace",
+//  "city": "Rio de Janeiro",
+//  "country": "Brasil",
+//  "category": "hotel",
+//  "price": 500,
+//  "about": "Melhor hotel do Rio de Janeiro, de frente para a praia de Copacabana."
+//}
+
+POST http://localhost:3333/create-user
+Content-Type: application/json
+
+{
+  "name": "Marcus Vinicius",
+  "email": "marcusv892@gmail.com",
+  "password": "teste123",
+  "confirm_password": "teste123"
+}
