@@ -3,8 +3,8 @@ import {
   serializerCompiler,
   validatorCompiler,
 } from 'fastify-type-provider-zod'
-import { createAccommodation } from './routes/create-accommodation'
-import { createUser } from './routes/create-user'
+import { createAccommodation } from './routes/AccommodationRoutes/create-accommodation'
+import { createUser } from './routes/UserRoutes/create-user'
 
 const app = fastify()
 
