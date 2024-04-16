@@ -22,14 +22,16 @@ model User {
 }
 
 model Accommodation {
-  id               String  @id @default(uuid())
-  name             String  @unique
-  city             String
-  country          String
-  imgAccommodation String? @map("img_accommodation")
-  category         String
-  price            Float
-  about            String
+  id               String   @id @default(uuid())
+  name             String?  @unique
+  city             String?
+  country          String?
+  imgAccommodation String?  @map("img_accommodation")
+  category         String?
+  price            Float?
+  about            String?
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
 
   Trips      Trips[]
   Assessment Assessment[]
@@ -45,6 +47,7 @@ model Assessment {
   userId          Int           @map("user_id")
   description     String
   rating          Int
+  createdAt       DateTime      @default(now()) @map("created_at")
 
   @@map("assessments")
 }
@@ -59,6 +62,7 @@ model Trips {
   finalDate       DateTime      @map("final_date")
   price           Float
   guests          Int
+  createdAt       DateTime      @default(now()) @map("created_at")
 
   @@map("trips")
 }
