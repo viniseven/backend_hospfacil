@@ -5,19 +5,24 @@ import { prisma } from '../../lib/prisma'
 
 export async function updateAccommodation(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().put(
-    '/accommodations/:id',
+    '/accommodation/:id',
     {
       schema: {
         params: z.object({
           id: z.string().uuid(),
         }),
         body: z.object({
-          name: z.string().min(8),
-          city: z.string(),
-          country: z.string(),
-          category: z.string(),
-          price: z.number().min(-Infinity).max(Infinity).nonnegative(),
-          about: z.string(),
+          name: z.string().optional(),
+          city: z.string().optional(),
+          country: z.string().optional(),
+          category: z.string().optional(),
+          price: z
+            .number()
+            .min(-Infinity)
+            .max(Infinity)
+            .nonnegative()
+            .optional(),
+          about: z.string().optional(),
         }),
         response: {
           200: z.object({
@@ -31,10 +36,6 @@ export async function updateAccommodation(app: FastifyInstance) {
       const { name, city, country, category, price, about } = request.body
 
       await prisma.accommodation.update({
-        where: {
-          id,
-        },
-
         data: {
           name,
           city,
@@ -42,6 +43,9 @@ export async function updateAccommodation(app: FastifyInstance) {
           category,
           price,
           about,
+        },
+        where: {
+          id,
         },
       })
 
