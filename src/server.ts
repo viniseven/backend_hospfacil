@@ -6,6 +6,7 @@ import {
 import { createAccommodation } from './routes/AccommodationRoutes/create-accommodation'
 import { deleteAccommodation } from './routes/AccommodationRoutes/delete-accommodation'
 import { updateAccommodation } from './routes/AccommodationRoutes/update-accommodation'
+import { showAccommodation } from './routes/AccommodationRoutes/show-accommodation'
 
 import { createUser } from './routes/UserRoutes/create-user'
 
@@ -17,6 +18,7 @@ app.setSerializerCompiler(serializerCompiler)
 app.register(createAccommodation)
 app.register(deleteAccommodation)
 app.register(updateAccommodation)
+app.register(showAccommodation)
 
 app.register(createUser)
 
