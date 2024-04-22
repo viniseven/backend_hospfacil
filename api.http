@@ -1,0 +1,23 @@
+
+
+//POST  http://localhost:3333/accommodations
+//Content-Type: application/json
+
+//{
+//  "name": "Copacabana Palace",
+//  "city": "Rio de Janeiro",
+//  "country": "Brazil",
+//  "category": "Hotel",
+//  "price": 750,
+//  "about": "O melhor hotel do Rio de Janeiro"
+//}
+
+//DELETE http://localhost:3333/accommodation/255334e2-dcb5-4010-9d6f-ba1eb50948db
+
+
+GET http://localhost:3333/accommodation/45914bf5-35b9-4ff6-a976-1bd6827ac3a8
+
+
+
+
+

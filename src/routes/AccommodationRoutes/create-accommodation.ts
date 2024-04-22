@@ -50,7 +50,9 @@ export async function createAccommodation(app: FastifyInstance) {
         },
       })
 
-      return reply.status(201).send({ message: 'Accommodation create success' })
+      return reply
+        .status(201)
+        .send({ message: 'Hospedagem cadastrada com sucesso' })
     },
   )
 }
