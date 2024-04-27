@@ -9,6 +9,7 @@ import { updateAccommodation } from './routes/AccommodationRoutes/update-accommo
 import { showAccommodation } from './routes/AccommodationRoutes/show-accommodation'
 
 import { createUser } from './routes/UserRoutes/create-user'
+import { updateUser } from './routes/UserRoutes/update-user'
 
 const app = fastify()
 
@@ -21,6 +22,7 @@ app.register(updateAccommodation)
 app.register(showAccommodation)
 
 app.register(createUser)
+app.register(updateUser)
 
 app
   .listen({
